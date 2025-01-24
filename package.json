@@ -1,0 +1,20 @@
+{
+  "name": "universal-tester",
+  "version": "1.0.0",
+  "description": "Test like mocha with ensurer on browser or node.js",
+  "main": "universal-tester.js",
+  "bin": {
+    "universal-tester": "universal-tester.bin.js",
+    "universal-test": "universal-tester.bin.js",
+    "u-test": "universal-tester.bin.js",
+    "utest": "universal-tester.bin.js",
+    "ute": "universal-tester.bin.js"
+  },
+  "scripts": {
+    "build": "npx htmlbundler --list bundlelist.js --output universal-tester.bundled.js --id none --wrap false",
+    "test": "node test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
