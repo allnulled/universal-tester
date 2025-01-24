@@ -60,4 +60,11 @@ describe("UniversalTester API Test", async function (it) {
 
 ## CLI
 
-You can use `unitest`
+You can use:
+ - `universal-tester`
+ - `universal-test`
+ - `u-test`
+ - `utest`
+ - `ute`
+
+All of them are overwritten. I am afraid I do not remember the name, like, like, *`ute` sabe*.
