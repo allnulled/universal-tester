@@ -1,6 +1,7 @@
 describe("UniversalTester API Test", async function (it) {
 
   it.onError(function(error) {
+    // THIS HALTS THE EXECUTION ON THE FIRST ERROR
     throw error;
   });
   

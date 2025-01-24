@@ -30,31 +30,50 @@ Once the API is loaded, in any environment you can find `UniversalTester` global
 
 ```js
 describe("UniversalTester API Test", async function (it) {
-    it.timeout(1000 * 20 * 10);
 
-    it.before(async function() {
-        this.timeout(1000 * 20);
-    });
+  it.onError(function(error) {
+    // THIS HALTS THE EXECUTION ON THE FIRST ERROR
+    throw error;
+  });
+  
+  it.never(async function() {
+      this.timeout(1000 * 20);
+  });
 
-    it("can be loaded", async function() {
-        this.timeout(1000 * 20);
-    });
+  it("can be loaded", async function() {
+      this.timeout(1000 * 20);
+  });
 
-    it.always("can do 1", async function() {
-        
-    });
+  it.always("can do 1", async function() {
+      await new Promise((resolve, reject) => {
+        setTimeout(resolve, 1000 * 0.2);
+      });
+  });
 
-    it.never("can do 2", async function() {
-        
-    });
+  it.never("can do 1", async function() {
+      
+  });
 
-    it.normally("can do 3", async function() {
-        
-    });
+  it.normally("can do 1", async function() {
+      
+  });
 
-    it.only("can do 4", async function() {
-        
-    });
+  it.only("can do 1", async function() {
+      
+  });
+
+  it.always("can throw error 1", async function() {
+      throw new Error("Weherever");
+  });
+
+  it.always("can throw error 2", async function() {
+      throw new Error("Weherever");
+  });
+
+  it.always("can throw error 3", async function() {
+      throw new Error("Weherever");
+  });
+
 });
 ```
 
