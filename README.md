@@ -68,3 +68,19 @@ You can use:
  - `ute`
 
 All of them are overwritten. I am afraid I do not remember the name, like, like, *`ute` sabe*.
+
+## Browser
+
+Automatic UI reporting through `data-test` html5 attribute when it matched the `describe(?, ...)` parameter. It pretty-prints the JSON with the state of the tests.
+
+## Error management
+
+To stop the test on the first error, add this line:
+
+```js
+it.onError(error => throw error);
+```
+
+## Things
+
+This is a (bundled) less than 300 lines solution for **testing** and **assertion** that covers most of the topics.

@@ -1,6 +1,6 @@
 {
   "name": "universal-tester",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test like mocha with ensurer on browser or node.js",
   "main": "universal-tester.js",
   "bin": {
@@ -11,10 +11,12 @@
     "ute": "universal-tester.bin.js"
   },
   "scripts": {
+    "dev": "npx nodemon -w universal-tester.js -x 'npm run build'",
     "build": "npx htmlbundler --list bundlelist.js --output universal-tester.bundled.js --id none --wrap false",
-    "test": "node test.js"
+    "test": "npm run build && node test.node.js",
+    "test-browser": "npx http-server -c-1 . -o test.html"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": ["test"],
+  "author": "allnulled",
+  "license": "WTFPL"
 }

@@ -1,8 +1,8 @@
-require(__dirname + "/universal-tester.js");
-
-const describe = UniversalTester.describe;
-
 describe("UniversalTester API Test", async function (it) {
+
+  it.onError(function(error) {
+    throw error;
+  });
   
   it.never(async function() {
       this.timeout(1000 * 20);
@@ -14,7 +14,7 @@ describe("UniversalTester API Test", async function (it) {
 
   it.always("can do 1", async function() {
       await new Promise((resolve, reject) => {
-        setTimeout(resolve, 1000);
+        setTimeout(resolve, 1000 * 0.2);
       });
   });
 
@@ -28,6 +28,18 @@ describe("UniversalTester API Test", async function (it) {
 
   it.only("can do 1", async function() {
       
+  });
+
+  it.always("can throw error 1", async function() {
+      throw new Error("Weherever");
+  });
+
+  it.always("can throw error 2", async function() {
+      throw new Error("Weherever");
+  });
+
+  it.always("can throw error 3", async function() {
+      throw new Error("Weherever");
   });
 
 });
